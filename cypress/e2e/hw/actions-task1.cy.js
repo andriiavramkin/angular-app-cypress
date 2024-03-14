@@ -58,16 +58,16 @@ describe("SmartTableSuite", ()=>{
             age: '27'
         }
 
-        smartTable.editButton.click()
+        smartTable.buttonEdit.click()
         smartTable.fill(userData)
         smartTable.confirmButton.click()
 
-        smartTable.verifyId.should('be.visible').and('include.text', `${userData.id}`)
-        smartTable.verifyFirstName.should('be.visible').and('include.text', `${userData.firstName}`)
-        smartTable.verifyLastName.should('be.visible').and('include.text', `${userData.lastName}`)
-        smartTable.verifyUsername.should('be.visible').and('include.text', `${userData.username}`)
-        smartTable.verifyEmail.should('be.visible').and('include.text', `${userData.email}`)
-        smartTable.verifyAge.should('be.visible').and('include.text', `${userData.age}`)
+        smartTable.idVerification.should('be.visible').and('include.text', `${userData.id}`)
+        smartTable.firstNameVerification.should('be.visible').and('include.text', `${userData.firstName}`)
+        smartTable.lastNameVerification.should('be.visible').and('include.text', `${userData.lastName}`)
+        smartTable.usernameVerification.should('be.visible').and('include.text', `${userData.username}`)
+        smartTable.emailVerification.should('be.visible').and('include.text', `${userData.email}`)
+        smartTable.ageVerification.should('be.visible').and('include.text', `${userData.age}`)
 
     })
 })

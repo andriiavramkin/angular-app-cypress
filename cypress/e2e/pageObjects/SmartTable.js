@@ -4,7 +4,7 @@
 export default class SmartTable {
     _url = "/pages/tables/smart-table"
     _containerSelector = "table thead.ng-star-inserted"
-    _newItem = 'tbody [class~="selected"]'
+    _newItem = 'tbody .selected'
 
     navigate(){
         cy.visit(this._url)
@@ -56,31 +56,31 @@ export default class SmartTable {
     }
 
 // edit test related 
-    get editButton(){
+    get buttonEdit(){
         return cy.get(this._newItem).find('a[class*="edit"]')
     }
     
-    get verifyId(){
+    get idVerification(){
         return cy.get(this._newItem).find('div[class="ng-star-inserted"]').eq(0)
     }
 
-    get verifyFirstName(){
+    get firstNameVerification(){
         return cy.get(this._newItem).find('div[class="ng-star-inserted"]').eq(1)
     }
 
-    get verifyLastName(){
+    get lastNameVerification(){
         return cy.get(this._newItem).find('div[class="ng-star-inserted"]').eq(2)
     }
 
-    get verifyUsername(){
+    get usernameVerification(){
         return cy.get(this._newItem).find('div[class="ng-star-inserted"]').eq(3)
     }
 
-    get verifyEmail(){
+    get emailVerification(){
         return cy.get(this._newItem).find('div[class="ng-star-inserted"]').eq(4)
     }
 
-    get verifyAge(){
+    get ageVerification(){
         return cy.get(this._newItem).find('div[class="ng-star-inserted"]').eq(5)
     }
 
