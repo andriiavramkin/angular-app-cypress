@@ -35,3 +35,22 @@
 //     }
 //   }
 // }
+
+
+declare global {
+    namespace Cypress {
+      interface Chainable {
+        fillLoginForm(data: {email: string, password: string, rememberMe: boolean }): Chainable <void>;
+        // getById(id: string): Chainable<Element>;
+      }
+    }
+  }
+  
+  Cypress.Commands.add('fillLoginForm', ({email, password, rememberMe = false}: {email: string, password: string, rememberMe: boolean }) => {
+    cy.get("nb-login form").find('#input-email').type(email)
+    cy.get("nb-login form").find('#input-password').type(password)
+  
+    if (rememberMe) cy.get("nb-login form").find('[name="rememberMe"]').click()
+  })
+  
+  

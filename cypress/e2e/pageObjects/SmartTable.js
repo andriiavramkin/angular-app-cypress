@@ -3,8 +3,8 @@
 
 export default class SmartTable {
     _url = "/pages/tables/smart-table"
-    _containerSelector = "thead.ng-star-inserted"
-    _newItem = 'tr[class~="selected"]'
+    _containerSelector = "table thead.ng-star-inserted"
+    _newItem = 'tbody [class~="selected"]'
 
     navigate(){
         cy.visit(this._url)
@@ -20,31 +20,31 @@ export default class SmartTable {
     }
 
     get addButton(){
-        return cy.get(this._containerSelector).find('th:first-of-type > a')
+        return cy.get(this._containerSelector).find('th:first-of-type a[href="#"]')
     }
     
     get idInput(){
-        return cy.get(this._containerSelector).find('input-editor > input[placeholder="ID"]')
+        return cy.get(this._containerSelector).find('input-editor input[placeholder="ID"]')
     }
 
     get firstNameInput(){
-        return cy.get(this._containerSelector).find('input-editor > input[placeholder="First Name")')
+        return cy.get(this._containerSelector).find('input-editor input[placeholder="First Name"]')
     }
     
     get lastNameInput(){
-        return cy.get(this._containerSelector).find('input-editor > input[placeholder="Last Name")')
+        return cy.get(this._containerSelector).find('input-editor input[placeholder="Last Name"]')
     }
 
     get usernameInput(){
-        return cy.get(this._containerSelector).find('input-editor > input[placeholder="Username")')
+        return cy.get(this._containerSelector).find('input-editor input[placeholder="Username"]')
     }
 
     get emailInput(){
-        return cy.get(this._containerSelector).find('input-editor > input[placeholder="E-mail")')
+        return cy.get(this._containerSelector).find('input-editor input[placeholder="E-mail"]')
     }
 
     get ageInput(){
-        return cy.get(this._containerSelector).find('input-editor > input[placeholder="Age")')
+        return cy.get(this._containerSelector).find('input-editor input[placeholder="Age"]')
     }
 
     get confirmButton(){
@@ -55,11 +55,11 @@ export default class SmartTable {
         return cy.get(this._newItem)
     }
 
-
+// edit test related 
     get editButton(){
-        return cy.get(this._newItem).find('[class~="ng2-smart-action ng2-smart-action-edit-edit ng-star-inserted"]')
+        return cy.get(this._newItem).find('a[class*="edit"]')
     }
-
+    
     get verifyId(){
         return cy.get(this._newItem).find('div[class="ng-star-inserted"]').eq(0)
     }

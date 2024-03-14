@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-import SmartTable from "../pageObjects/SmartTable";
+import SmartTable from "../pageObjects/SmartTable.js"
 
 describe("SmartTableSuite", ()=>{
     const smartTable = new SmartTable()
@@ -45,6 +45,7 @@ describe("SmartTableSuite", ()=>{
 
     smartTable.newItemCreated.should('exist').and('be.visible')
 
+    cy.wait(500)
     })
 
     it('Edit existing user', ()=>{
