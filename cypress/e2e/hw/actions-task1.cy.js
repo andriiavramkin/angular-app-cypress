@@ -2,6 +2,7 @@
 
 
 import SmartTable from "../pageObjects/SmartTable.js"
+import '../support/commands.ts'
 
 describe("SmartTableSuite", ()=>{
     const smartTable = new SmartTable()
