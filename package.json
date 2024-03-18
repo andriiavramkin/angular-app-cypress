@@ -38,7 +38,7 @@
     "test:config": "cypress run --config",
     "test:env": "cypress run --env",
     "test:global": "cypress run --global"
-    }
+  
   },
   "dependencies": {
     "@angular/animations": "^15.2.10",
